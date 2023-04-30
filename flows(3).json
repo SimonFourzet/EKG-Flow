@@ -1,0 +1,141 @@
+[
+    {
+        "id": "719f80caf77d63af",
+        "type": "ui_chart",
+        "z": "fbbfc39850d90335",
+        "name": "",
+        "group": "cfb165e5ca35e3f4",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "Test",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "500",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "604800",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f78b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#800040",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 550,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9ff18eb1d72fe75c",
+        "type": "change",
+        "z": "fbbfc39850d90335",
+        "name": "Test",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "Test",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 390,
+        "y": 260,
+        "wires": [
+            [
+                "719f80caf77d63af"
+            ]
+        ]
+    },
+    {
+        "id": "ab89d2528dcab39c",
+        "type": "mqtt in",
+        "z": "fbbfc39850d90335",
+        "name": "PV-Test",
+        "topic": "shellies/shellyplug-s-XXXXXX/relay/0/power",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "6b99c80a2cc186a7",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 260,
+        "wires": [
+            [
+                "9ff18eb1d72fe75c"
+            ]
+        ]
+    },
+    {
+        "id": "cfb165e5ca35e3f4",
+        "type": "ui_group",
+        "name": "Leistung",
+        "tab": "94419247f50965c1",
+        "order": 2,
+        "disp": true,
+        "width": 13,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6b99c80a2cc186a7",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "raspi",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "94419247f50965c1",
+        "type": "ui_tab",
+        "name": "Modultest",
+        "icon": "timeline",
+        "order": 11,
+        "disabled": false,
+        "hidden": false
+    }
+]
